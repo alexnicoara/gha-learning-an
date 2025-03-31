@@ -1,0 +1,25 @@
+name: Run Python Script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-simple-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # Install latest Python version
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 'latest'
+
+    - name: Ensure pip is installed
+      run: |
+        python -m ensurepip --upgrade
+        python -m pip install --upgrade pip
+
+    - name: Print Hello World
+      run: |
+        python -c "print('Hello, World!')"  # This will run the Python command directly
