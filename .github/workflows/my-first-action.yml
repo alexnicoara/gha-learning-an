@@ -22,4 +22,4 @@ jobs:
 
     - name: Print Hello World
       run: |
-        python -c "print('Hello, World!')"  # This will run the Python command directly
+        python scripts/hello_world.py
